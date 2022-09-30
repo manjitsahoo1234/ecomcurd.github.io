@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'ecommercecurd.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':'ecomcurddb',
-        'USER':'root',
-        'PASSWORD':'SMS@99'
+        'NAME':'djangoproject12$ecomcurddb',
+        'USER':'djangoproject12',
+        'PASSWORD':'SMS@9999'
     }
 }
 
