@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Ecom addproducts</title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    input[name]{
+      margin-top:10px;
+      background-color:lightgreen;
+    }
+
+  </style>
+  <body class="bg-warning">
+    <div class="container">
+      <h2 class="text-center display-5 mt-4 text-danger font-weight-bold">Please Enter Products Data Here</h2>
+      <div class="row">
+        <div class="offset-md-3 col-md-6 shadow-lg bg-danger">
+          <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="pname" class="form-control" placeholder="Product Nmae">
+            <input type="text" name="pdetails" class="form-control" placeholder="Product Details">
+            <input type="number" name="pprice" class="form-control" placeholder="Product Price">
+            <input type="text" name="plocation" class="form-control" placeholder="Product Location">
+            <center>
+              <input type="submit" value="Create" class="btn btn-success mt-2">
+              <input type="reset" value="Clear" class="btn btn-dark mt-2"><br>
+              <a href="{% url 'index' %}" class="btn btn-primary my-2">Goto Homepage</a>
+            </center>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

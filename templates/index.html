@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ecom</title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    body{
+      background-color:#e3b330;
+    }
+  </style>
+  <body>
+    <h1 class="display-3 text-center font-weight-bold text-danger" >Welcome Ecommerce Website</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <a href="{% url 'add_products' %}" class="btn btn-success">Add New Products</a>
+          <table class="table table-bordered">
+            <thead class="text-center bg-primary">
+              <tr class="text-white">
+                <th>Product Name</th>
+                <th>Products Details</th>
+                <th>product Price</th>
+                <th>Product Location</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody class="text-center bg-success">
+              {% for i in products %}
+              <tr>
+                <td>{{i.product_name}}</td>
+                <td>{{i.product_details}}</td>
+                <td>{{i.product_price}}</td>
+                <td>{{i.product_loc}}</td>
+
+                <td>
+                <a href="{% url 'update_product' i.id %}" class="btn btn-dark">Update</a>
+                <a href="{% url 'delete_product' i.id %}" class="btn btn-danger">Delete</a>
+                </td>
+              </tr>
+
+              {% endfor %}
+
+            </tbody>
+
+          </table>
+
+
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>
